@@ -1,0 +1,33 @@
+<!--HTML index page-->
+<!DOCTYPE html>
+<html lang="en" ng-app="goat">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Goat Image Gallery</title>
+</head>
+<body>
+    <!-------------------------Header---------------------------------->
+    <div>
+        <h1>Goat Images</h1>
+        <h2><em>Images of goats.  That's it.</em></h2>
+    </div>
+    <!-------------------------Input Form------------------------------>
+     <div ng-controller="moods">
+        <form name = "connote-form">   
+            <h3>Message</h3>
+            <input type="text" ng-model="message" placeholder="Enter a Message Here"><br>
+            <h3>Emotion</h3>
+             <select ng-model="emotion" ng-options="x for x in moods">
+                 </select>
+            <h3>Emphasis</h3>
+            <input type="range" ng-model="value" min=0 max =7>
+        </form> 
+
+     <!-----------------------Output Message---------------------------->
+    
+          <h1 id="output-text" class={{emotion}}><font size={{value}}pt>{{message}}</font></h1>
+
+      </div>
+</body>
+</html>
